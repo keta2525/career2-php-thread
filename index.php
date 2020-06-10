@@ -107,13 +107,6 @@ function writeData(){
     exit;
 }
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){
-    writeData();
-}
-
-readData();
-
-
 
 ?>
 </div>
