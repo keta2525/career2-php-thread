@@ -102,7 +102,7 @@ function writeData(){
 
     //ブラウザのリロード対策
     //11/09分
-    //11/27分aaa
+    //11/27分aaaaaa
     $redirect_url = $_SERVER['HTTP_REFERER'];
     header("Location: $redirect_url");
     exit;
