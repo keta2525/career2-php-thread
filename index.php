@@ -38,7 +38,7 @@
     </form>
 
 <?php
-
+$number = 1;
 const THREAD_FILE = 'thread.txt';
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
@@ -49,13 +49,14 @@ readData();
 
 function readData(){
     if(! file_exists(THREAD_FILE)){
-        echo("a");
         $fp = fopen(THREAD_FILE, 'w');
         fwrite($fp, '');
         fclose($fp);
     }
 
+    echo $number;
     $fp = fopen(THREAD_FILE, 'rb');
+    $number++;
 
     if($fp){
         if(flock($fp, LOCK_SH)){
