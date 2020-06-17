@@ -7,7 +7,7 @@
 
     <title>掲示板App</title>
 </head>
-<body>
+<body BGCOLOR="#FFFFFF">
 
 <div class="container">
     <div class="col-md-8">
@@ -38,7 +38,7 @@
     </form>
 
 <?php
-echo '<span style="background-color:#fff000">' .$i. '</span> ';
+
 const THREAD_FILE = 'thread.txt';
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
