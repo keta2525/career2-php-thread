@@ -54,9 +54,9 @@ function readData(){
         fclose($fp);
     }
 
-    echo $number;
+    print_r($number);
     $fp = fopen(THREAD_FILE, 'rb');
-    $number++;
+    $number += 1;
 
     if($fp){
         if(flock($fp, LOCK_SH)){
