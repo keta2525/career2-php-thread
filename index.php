@@ -1,32 +1,38 @@
     <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=, shrink-to-fit=no">
+    <style>
+    .pbode {
+	    background-image: url(C:\Users\2019dsp4101\Pictures\Camera Roll\71Qh3QFPyFL._AC_SX466_.jpg);
+	    }
+    </style>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>掲示板App</title>
 </head>
-<body BGCOLOR="#FFFFFF">
+<body style="background-color:#EDF7FF;">
 
-<div class="container">
-    <div class="col-md-8">
-
-        <h1 class="text-center bg-warning text-success py-3">掲示板App(yumoto)</h1>
-        <h2 class="text-muted py-3">投稿フォーム</h2>
+<div class="container .bg_test" .pbode>
+    <div class="container w-50">
+        <h1 class="text-center text-success py-3">掲示板App(yumoto)</h1>
+        <h2 class="text-muted text-center py-3">投稿フォーム</h2>
 
         <form  method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
             <div class="form-group">
                 <label for="name">名前</label>
-                <input type="text" class="form-control" id="name" name="personal_name" size="30" placeholder="名前" required><br><br>
+                <input type="text" class="form-control" id="name" name="personal_name" size="30" placeholder="名前" required><br>
             </div>
 
             <div class="form-group">
                 <label for="contents">内容</label>
-                <textarea class="form-control" id="contents" type="text" name="contents" placeholder="内容" rows="10" cols="50" required></textarea>
+                <textarea class="form-control" id="contents" type="text" name="contents" placeholder="内容" rows="5" cols="30" required></textarea>
             </div>
 
-            <button class="btn btn-success" type="submit">投稿する</button>
+            <div class="text-center">
+            <button class="btn btn-success w-50" type="submit">投稿する</button>
+            </div>
         </form>
 
 <hr>
@@ -80,9 +86,8 @@ function writeData(){
 
     $data = "<hr>\n";
     $data = $data."<p>投稿日時: ".date("Y/m/d H:i:s")."</p>\n";
-    $data = $data."<p>投稿者:".$personal_name."</p>\n";
-    $data = $data."<p>内容:</p>\n";
-    $data = $data."<p>".$contents."</p>\n";
+    $data = $data."<p>投稿者 : ".$personal_name."</p>\n";
+    $data = $data."$contents\n";
 
     $fp = fopen(THREAD_FILE,'ab');
 
