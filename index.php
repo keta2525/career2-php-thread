@@ -49,6 +49,7 @@ readData();
 
 function readData(){
     if(! file_exists(THREAD_FILE)){
+        echo("a");
         $fp = fopen(THREAD_FILE, 'w');
         fwrite($fp, '');
         fclose($fp);
