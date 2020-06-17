@@ -12,7 +12,7 @@
 <div class="container">
     <div class="col-md-8">
 
-        <h1 class="text-center text-success py-3">掲示板App(yumoto)</h1>
+        <h1 class="text-center bg-warning text-success py-3">掲示板App(yumoto)</h1>
         <h2 class="text-muted py-3">投稿フォーム</h2>
 
         <form  method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
@@ -38,7 +38,7 @@
     </form>
 
 <?php
-
+echo '<span style="background-color:#fff000">' .$i. '</span> ';
 const THREAD_FILE = 'thread.txt';
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
