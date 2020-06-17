@@ -26,7 +26,7 @@
                 <textarea class="form-control" id="contents" type="text" name="contents" placeholder="内容" rows="10" cols="50" required></textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit">投稿する</button>
+            <button class="btn btn-success" type="submit">投稿する</button>
         </form>
 
 <hr>
