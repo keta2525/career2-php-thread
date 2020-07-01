@@ -1,20 +1,17 @@
+ 
+ 
     <html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=, shrink-to-fit=no">
-    <style>
-    .pbode {
-	    background-image: url(C:\Users\2019dsp4101\Pictures\Camera Roll\71Qh3QFPyFL._AC_SX466_.jpg);
-	    }
-    </style>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="example.css">
     <title>掲示板App</title>
 </head>
-<body style="background-color:#EDF7FF;">
 
-<div class="container .bg_test" .pbode>
+
+<div class="container .bg_test">
     <div class="container w-50">
         <h1 class="text-center text-success py-3">掲示板App(yumoto)</h1>
         <h2 class="text-muted text-center py-3">投稿フォーム</h2>
@@ -46,6 +43,9 @@
 <?php
 
 const THREAD_FILE = 'thread.txt';
+
+require_once './Thread.php';
+$thread = new Thread('掲示板App');
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     writeData();
@@ -106,8 +106,6 @@ function writeData(){
     fclose($fp);
 
     //ブラウザのリロード対策
-    //11/09分
-    //11/27分aaaaaa
     //git pull origin master
     $redirect_url = $_SERVER['HTTP_REFERER'];
     header("Location: $redirect_url");
